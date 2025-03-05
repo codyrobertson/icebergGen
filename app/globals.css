@@ -62,3 +62,17 @@
   background: linear-gradient(to bottom, #87ceeb 0%, #1e90ff 20%, #0000cd 40%, #000080 60%, #191970 80%, #000000 100%);
 }
 
+/* Z-index stacking context fixes */
+.popover-content {
+  z-index: 100 !important;
+}
+
+[data-radix-popper-content-wrapper] {
+  z-index: 100 !important;
+}
+
+[cmdk-list] {
+  max-height: 400px;
+  overflow-y: auto;
+}
+

@@ -1,6 +1,9 @@
 import { OpenAI } from "openai"
 
-export function openai(model: string, apiKey: string) {
+export function openai(model: string) {
+  // Use the actual OpenAI API key from environment variables
+  const apiKey = process.env.OPENAI_API_KEY
+
   if (!apiKey) {
     console.warn("OpenAI API key not found, using mock implementation")
     return mockOpenAI()
@@ -13,9 +16,10 @@ export function openai(model: string, apiKey: string) {
   return {
     createCompletion: async ({ prompt, max_tokens = 500, temperature = 0.7 }: any) => {
       try {
+        // Use the OpenAI API to generate completions
         const response = await openaiClient.completions.create({
-          model,
-          messages: [{ role: "user", content: prompt }],
+          model: model || "text-davinci-003",
+          prompt: prompt,
           max_tokens,
           temperature,
         })
@@ -23,7 +27,7 @@ export function openai(model: string, apiKey: string) {
         return {
           choices: [
             {
-              text: response.choices[0]?.message?.content || "",
+              text: response.choices[0]?.text || "",
             },
           ],
         }
@@ -35,8 +39,9 @@ export function openai(model: string, apiKey: string) {
 
     chat: async (messages: any) => {
       try {
+        // Use the OpenAI API for chat completions
         const response = await openaiClient.chat.completions.create({
-          model,
+          model: model || "gpt-3.5-turbo",
           messages,
         })
 

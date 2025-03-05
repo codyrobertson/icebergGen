@@ -1,0 +1,11 @@
+# Favicon Instructions
+
+This file is a placeholder for the favicon.ico file.
+
+The actual favicon.ico will be generated dynamically by the /api/favicon route.
+You can also generate a static version by:
+
+1. Visit your deployed site at /api/favicon
+2. Save the image
+3. Place it in the public directory as favicon.ico
+

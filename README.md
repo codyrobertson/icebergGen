@@ -69,6 +69,18 @@ A Next.js application with Supabase integration for research and data management
 
 The application can be deployed on [Vercel](https://vercel.com/) or any other Next.js compatible hosting service.
 
+### Deploying to Vercel
+
+1. Push your code to GitHub
+2. Visit [Vercel](https://vercel.com/new) and import your GitHub repository
+3. Configure the following environment variables in the Vercel dashboard:
+   - `NEXT_PUBLIC_SUPABASE_URL`
+   - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+   - `NEXT_PUBLIC_SITE_URL`
+4. Deploy your application
+
+For automated deployments, this project includes GitHub Actions workflows in the `.github/workflows` directory.
+
 ```bash
 npm run build
 # or

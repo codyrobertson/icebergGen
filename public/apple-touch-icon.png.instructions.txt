@@ -1,0 +1,11 @@
+# Apple Touch Icon Instructions
+
+This file is a placeholder for the apple-touch-icon.png file.
+
+The actual apple-touch-icon.png will be generated dynamically by the /api/apple-icon route.
+You can also generate a static version by:
+
+1. Visit your deployed site at /api/apple-icon
+2. Save the image
+3. Place it in the public directory as apple-touch-icon.png
+
